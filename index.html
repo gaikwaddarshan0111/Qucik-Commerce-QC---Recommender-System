@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Quick Commerce Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Quick Commerce Recommender</h1>
+        
+        <div class="input-selection">
+            <label for="product_id"> Product ID (for context-based):</label>
+            <input type="number" id="product_id" placeholder="e.g. , 101">
+            <br>
+            <label for="num_recommendations">Number of Recommendations:</label>
+            <input type="number" id="num_recommendations" value="5" min="1" max="10">
+
+            <button onclick="'getRecommendations()'">Get Recommendations</button>
+            <button onclick="clearResults()">Clear Results</button> 
+
+        </div>
+
+        <div class="results-section">
+            <h2>Recommendations</h2>
+            <div id="recommendations-list">
+                <p>Enter a Product ID or Click "Get Recommendations" for general popular items</p>
+            </div>
+            <div id="error-message" class="error"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
